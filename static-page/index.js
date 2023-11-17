@@ -3,17 +3,29 @@ const { React, ReactDOM, createRoot } = window;
 function Header() {
     return (
         <header>
-            <nav>
-                <img src="./react-logo.png" width="40px" />
+            <nav className="nav">
+                <img src="./react-logo.png" className="nav-logo" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
             </nav>
         </header>
     )
 }
 
-function Page() {
+function Footer() {
+    return (
+        <footer>
+            <small>© 2021 Ziroll development. All rights reserved.</small>
+        </footer>
+    )
+}
+
+function MainContent() {
     return (
         <div>
-            <Header />
             <h1>Reasons I'm excited to learn React</h1>
             <ol>
                 <li>It's a popular library, so I'll be 
@@ -21,9 +33,16 @@ function Page() {
                 <li>I'm more likely to get a job as a developer
                 if I know React</li>
             </ol>
-            <footer>
-                <small>© 2021 Ziroll development. All rights reserved.</small>
-            </footer>
+        </div>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
         </div>
     )
 }
